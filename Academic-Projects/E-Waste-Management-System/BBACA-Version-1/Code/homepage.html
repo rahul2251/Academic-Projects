@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>homepage</title>
+<style type="text/css">
+body
+{
+	margin: 0px;
+	overflow-x: hidden;
+}
+.top
+{
+	width: 1536px;
+	height: 90px;
+	background-color: white;
+}
+.top img
+{
+	width: 65px;
+	height: 65px;
+	border-radius: 20%;
+	margin: 15px 40px;
+	animation: logo 1.3s 1 reverse;
+}
+@keyframes logo
+{
+	100%{transform: translateX(-120px);}
+}
+.top h1
+{
+	font: 39px Candara;
+	color: black;
+	position: absolute;
+	top: -1.2%;
+	left: 7.5%;
+	animation: title 1.3s 1 reverse;
+}
+.top p
+{
+	font: 18px Calibri;
+	position: relative;bottom: 60px;left: 118px;
+	animation: title 1.3s 1 reverse;
+}
+@keyframes title
+{
+	100%{transform: translateY(-80px);}
+}
+.top ul
+{
+	position: absolute;
+	top: 3%;
+	left: 48%;
+	animation: ul 1.3s 1 reverse;
+}
+@keyframes ul
+{
+	100%{transform: translateY(-80px);}
+}
+.top ul li
+{
+	display: inline-block;
+	list-style: none;
+}
+.top ul li a
+{
+	color: black;
+	text-decoration: none;
+	border: 0px solid black;
+	font: 17.5px Calibri;
+	padding: 5px 18px;
+}
+.top ul li a#home
+{
+	color: black;
+	border-bottom: 3px solid #1cc606;
+}
+.top ul li a:hover
+{
+	color: black;
+	border-bottom: 3px solid #1cc606;
+}
+a.login
+{
+	font: 18px Calibri;
+	color: black;
+	background-color: #1cc606;
+	position: absolute;
+	top: 3.6%;
+	left: 91%;
+	padding: 9px; 
+	text-decoration: none;
+	transition: 0.3s ease;
+	animation: shake 1s infinite linear;
+}
+a.login:hover,.bg a.admin:hover
+{
+	background-color: black;
+	color: #50f270;
+}
+.bg
+{
+	width: 1536px;
+	height: 630px;
+	position: relative;top: 10px;
+	background-image: url("homebg.jpeg");
+	background-position: center;
+	background-size: cover;
+}
+.bg h1
+{
+	font: 55px Calibri;
+	position: relative;
+	top: 90px;left: 120px;
+}
+.bg a.admin
+{
+	font: 18px Calibri;
+	color: black;
+	background-color: #1cc606;
+	position: absolute;
+	top: -17.5%;
+	left: 81%;
+	padding: 9px; 
+	text-decoration: none;
+	transition: 0.3s ease;
+}
+div#line
+{
+	width: 1536px;
+	height: 1px;
+	background-color: #1cc606;
+	position: absolute;
+	top: 13%;
+}
+#division
+{
+	width: 1536px;
+	height: 600px;
+	background-image: url(protect.jpg);
+	background-position: center;
+	background-size: cover;
+	position: absolute;top: 102%;
+}
+#division p
+{
+	font: 40px Candara;
+	margin-left: 100px;
+	margin-top: 100px;
+}
+#division .sell a,#division .buy a
+{
+	font: 33px Calibri;
+	background-color: #04af40;
+	width: 168px;
+	padding: 10px 50px;
+	color: black;
+	text-decoration: none;
+}
+#division .sell a
+{
+	position: relative;
+	left: 300px;top: 80px;
+}
+#division .buy a
+{
+	position: relative;
+	left: 600px;top: 18px;
+}
+#info
+{
+	width: 1536px;
+	height: 600px;
+	position: absolute;top: 181.7%;
+	background-color: #d8d4d4;
+}
+#info h2
+{
+	font: 32px Candara;
+	border-bottom: 2.7px solid #1cc606;
+	width: 1200px;
+	padding: 20px 0px;
+	margin: 60px 140px;
+}
+#info p
+{
+	font: 27px Calibri;
+	margin-left: 65px;
+}
+#info img
+{
+	height: 350px;
+	width: 500px;
+	position: absolute;top: 30%;left: 61%;
+}
+#quotes
+{
+	width: 1536px;
+	height: 650px;
+	position: absolute;top: 261.4%;
+	background-color: #98ebb1;
+}
+#quotes .box1,#quotes .box2,#quotes .box3
+{
+	width: 450px;
+	height: 480px;
+	border: 0px solid black;
+	box-shadow: 0px 0px 20px 2px black;
+	z-index: 1;
+	background-color: white;
+}
+.box1
+{
+	position: absolute;
+	left: 3%;
+	top: 15%;
+}
+.box2
+{
+	position: absolute;
+	left: 35%;
+	top: 15%;
+}
+.box3
+{
+	position: absolute;
+	left: 67%;
+	top: 15%;
+}
+.box1 img,.box2 img,.box3 img
+{
+	width: 85px;height: 85px;
+	position: relative;top: 30px;left: 180px;
+}
+.box1 h4,.box2 h4,.box3 h4
+{
+	font: 24px Calibri;
+	position: absolute;top: 43%;left: 4%;
+	letter-spacing: 0.5px;
+}
+.gallery
+{
+	width: 1536px;
+	height: 730px;
+	background-image: url("sqbg.jpg");
+	position: absolute;top: 347.7%;
+}
+.gallery img
+{
+	height: 250px;
+	width: 425px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	position: relative;top: 160px;left: 85px;
+	box-shadow: 0px 0px 5px 2px black;
+}
+.gallery h1
+{
+	font: 46px Candara;
+	border-bottom: 2.7px solid #1cc606;
+	width: 1310px;
+	padding: 15px 0px;
+	position: absolute;top: -1.5%;left: 7%;
+}
+#footer
+{
+	width: 1536px;
+	height: 50px;
+	background-color: #2b2b2b;
+	position: absolute;top: 444.5%;
+}
+#footer h1
+{
+	font: 23px Candara;
+	color: #0eb4fb;
+	position: absolute;top: -10%;left: 72%;
+}
+</style>
+</head>
+<body>
+<div class="top"><img src="logo.jpeg"><h1>GreenDream</h1><p><i>managed by </i><b>SHREE RECYCLERS</b></p>
+	<ul>
+		<li><a href="#" id="home">HOME</li></a>
+		<li><a href="#info">ABOUT US</li></a>
+		<li><a href="#gallery">GALLERY</li></a>
+		<li><a href="#">CONTACT US</li></a></font>
+	</ul>
+
+			<a class="login" href="customer_login.php">Login/Register</a>
+</div>
+
+			<div class="bg">
+				<h1>Let's Change the Nature<br>of <i>Ewaste</i>!!!</h1>
+				<a href="admin_login.php" class="admin">Admin Login</a>
+			</div>
+
+			<div id="line"></div>
+
+		<div id="division">
+				<p><b><i>We Don't Want To Protect The Environment <br>We Want To Create A World Where The Environment Doesn't Need Protection</b></i></p>
+				<h1 class="sell"><a href="customer_login.php">Sell E-Waste</a></h1>
+				<h1 class="buy"><a href="customer_login.php">Buy E-Waste</a></h1>
+		</div>
+
+		<div id="info">
+			<h2><b>WELCOME TO GREEN DREAM E-WASTE MANAGEMENT</b></h2>
+			<p>Electronic waste or e-waste is any broken or unwanted electrical<br>or electronic appliance. E-waste includes computers, entertainment<br>electronics, mobile phones and other items that have been discarded<br>by their original users. E-waste or electronics recycling is the process<br>of recovering material from old devices to use in new products.The main<br>purpose of online e-waste management system is to provide another<br>way for the customer to giving the e-waste material. The E-waste<br>management system is the Website that can be accessed throughout the <br>Net and can be accessed by anyone who has a net connection.</p>
+
+			<img src="infoimg.jpeg">
+		</div>
+
+		<div id="quotes">
+			<div class="box1">
+				<img src="vision.png">
+				<br><br><p><center><font face="Calibri" size="6" color="#1cc606"><b>OUR VISION</b></font></center></p>
+				<h4><i>Our vision is to provide top class services and solutions for E-Waste Recycling and to help Mother Earth to harvest maximum resources!!</i></h4>
+			</div>
+			
+			<div class="box2">
+				<img src="mission.jpeg">
+				<br><br><p><center><font face="Calibri" size="6" color="#1cc606"><b>OUR MISSION</b></font></center></p>
+				<h4><i>To provide integrated E-Waste Management solutions to society and our clients with a focus on safety, cost optimization and service excellence!!</i></h4>
+			</div>
+				
+			<div class="box3">
+				<img src="aim.png">
+				<br><br><p><center><font face="Calibri" size="6" color="#1cc606"><b>OUR AIM</b></font></center></p>
+				<h4><i>We aim to recover maximum resources from electronic waste and minimum land field and to adopt cleaner technology and best practices for continual improvement!!</i></h4>
+			</div>
+		</div>
+		
+		<div class="gallery" id="gallery">
+				<h1><b>GALLERY</b></h1>
+				<img src="g1.jpeg"><img src="g2.jpeg"><img src="g3.jpeg">
+				<img src="g4.jpeg"><img src="g5.jpeg"><img src="g6.jpg">
+		</div>
+
+		<div id="footer">
+			<h1><i><b>E-WASTE MANAGEMENT SYSTEM</i></b></h1>
+		</div>
+</body>
+</html>

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenCycle E-Waste Solutions | Pune's Premier Recycler</title>
+    <meta name="description" content="Schedule reliable e-waste pickup in Pune. GreenCycle ensures authorized, eco-friendly disposal. Register to track your recycling impact today.">
+    <meta name="keywords" content="e-waste recycling pune, electronic waste pickup india, eco-friendly disposal, scrap laptop price, green recycling">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" href="style.css">
+
+    <style>
+        /* --- CSS Variables --- */
+        :root {
+            --primary: #059669; /* Emerald Green */
+            --primary-dark: #047857;
+            --accent: #10b981;
+            --secondary: #1f2937; /* Dark Gray */
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --radius: 8px;
+        }
+
+        /* --- Reset & Base --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--secondary);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        /* --- Utilities --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            font-weight: 600;
+            border-radius: var(--radius);
+            cursor: pointer;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            border: 2px solid var(--primary);
+        }
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .section-padding { padding: 80px 0; }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .section-header h2 {
+            font-size: 2.25rem;
+            color: var(--secondary);
+            margin-bottom: 16px;
+        }
+        .section-header .divider {
+            height: 4px;
+            width: 60px;
+            background: var(--primary);
+            margin: 0 auto 16px;
+            border-radius: 2px;
+        }
+
+        /* --- Navigation --- */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo i { color: var(--primary); }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            color: var(--secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        .nav-link:hover { color: var(--primary); }
+
+        .auth-group {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-left: 24px;
+            padding-left: 24px;
+            border-left: 1px solid #e5e7eb;
+        }
+
+        .btn-login {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        .btn-login:hover { color: var(--primary); }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding-top: 160px;
+            padding-bottom: 100px;
+            background: linear-gradient(to right, #f0fdf4, #ffffff);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+        .hero-content span { color: var(--primary); }
+
+        .hero-content p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 32px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+        }
+
+        .hero-image img {
+            border-radius: 20px;
+            box-shadow: 20px 20px 0 rgba(5, 150, 105, 0.1);
+        }
+
+        /* --- About Section --- */
+        .about { background: var(--white); }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text p { margin-bottom: 16px; color: var(--text-light); }
+        .stat-badge {
+            display: inline-block;
+            background: #ecfdf5;
+            color: var(--primary-dark);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* --- Services --- */
+        .services { background: var(--bg-light); }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 32px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-bottom-color: var(--primary);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            background: #ecfdf5;
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+        }
+
+        .service-card h3 { margin-bottom: 12px; font-size: 1.25rem; }
+        .service-card p { color: var(--text-light); font-size: 0.95rem; }
+
+        /* --- Accepted Items --- */
+        .items { background: var(--white); }
+        
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 24px;
+        }
+
+        .item-card {
+            border: 1px solid #e5e7eb;
+            border-radius: var(--radius);
+            padding: 24px 16px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .item-card:hover {
+            border-color: var(--primary);
+            background: #f0fdf4;
+        }
+        .item-card i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 12px;
+            transition: 0.3s;
+        }
+        .item-card:hover i { color: var(--primary); }
+        .item-card span { display: block; font-weight: 500; font-size: 0.9rem; }
+
+        /* --- How It Works --- */
+        .how-it-works { background: var(--secondary); color: var(--white); }
+        .how-it-works .section-header h2 { color: var(--white); }
+        .how-it-works .section-header p { color: #9ca3af; }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            position: relative;
+        }
+        
+        /* Connecting Line */
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background: rgba(255,255,255,0.1);
+            z-index: 1;
+        }
+
+        .step {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .step-num {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            font-size: 1.2rem;
+            border: 4px solid var(--secondary);
+        }
+
+        .step h3 { font-size: 1.1rem; margin-bottom: 10px; }
+        .step p { color: #9ca3af; font-size: 0.9rem; }
+
+        /* --- Why Choose Us --- */
+        .why-choose { background: var(--bg-light); }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature { display: flex; gap: 20px; }
+        .feature i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-top: 4px;
+        }
+        .feature h4 { font-size: 1.1rem; margin-bottom: 8px; }
+        .feature p { color: var(--text-light); font-size: 0.95rem; }
+
+        /* --- Impact Metrics --- */
+        .impact {
+            padding: 60px 0;
+            background: var(--primary);
+            color: var(--white);
+        }
+        .impact-grid {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        .metric h2 { font-size: 3rem; font-weight: 700; margin-bottom: 8px; }
+        .metric p { font-size: 1.1rem; opacity: 0.9; }
+
+        /* --- Auth CTA Section --- */
+        .auth-cta {
+            background: var(--white);
+            text-align: center;
+            padding: 100px 0;
+        }
+        .auth-box {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px;
+            border-radius: 24px;
+            border: 1px solid #d1fae5;
+        }
+        .auth-box h2 { font-size: 2.5rem; margin-bottom: 16px; color: var(--secondary); }
+        .auth-box p { color: var(--text-light); margin-bottom: 32px; font-size: 1.1rem; }
+        .auth-box-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #111827;
+            color: #d1d5db;
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h3 { color: var(--white); font-size: 1.5rem; margin-bottom: 20px; }
+        .footer-brand p { font-size: 0.95rem; margin-bottom: 24px; max-width: 300px; }
+        
+        .footer-col h4 { color: var(--white); margin-bottom: 24px; font-size: 1.1rem; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col a { color: #9ca3af; font-size: 0.95rem; }
+        .footer-col a:hover { color: var(--primary); padding-left: 5px; }
+
+        .social-links { display: flex; gap: 16px; }
+        .social-links a {
+            width: 36px; height: 36px;
+            background: rgba(255,255,255,0.1);
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%;
+            color: var(--white);
+        }
+        .social-links a:hover { background: var(--primary); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 992px) {
+            .hero-container, .about-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-btns { justify-content: center; }
+            .section-header { padding: 0 20px; }
+            .steps-container { grid-template-columns: 1fr 1fr; gap: 40px; }
+            .steps-container::before { display: none; }
+            .auth-group { display: none; } /* Hide desktop auth on mobile, add to menu in JS if needed */
+            
+            .hamburger { display: block; }
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 40px 0;
+                transition: 0.3s;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            }
+            .nav-menu.active { left: 0; }
+            
+            /* Mobile Auth Buttons Injection */
+            .mobile-auth {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                margin-top: 20px;
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .steps-container { grid-template-columns: 1fr; }
+            .impact-grid { flex-direction: column; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .auth-box-btns { flex-direction: column; }
+            .auth-box { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <i class="fas fa-recycle"></i> GreenCycle
+                </a>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#items" class="nav-link">What We Collect</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    
+                    <!-- Mobile Only Auth (Visible via JS logic mostly, but styled here for structure) -->
+                    <div class="mobile-auth" style="display: none;">
+                        <a href="login.php" class="btn-login">Login</a>
+                        <a href="registration.php" class="btn btn-primary">Register</a>
+                    </div>
+                </ul>
+
+                <div class="auth-group">
+                    <a href="login.php" class="btn-login"><i class="far fa-user"></i> Login</a>
+                    <a href="registration.php" class="btn btn-primary">Register</a>
+                </div>
+
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Recycle E-Waste <br><span>Responsibly</span> in Pune</h1>
+                <p>Don't let your old gadgets toxify the earth. We provide authorized doorstep pickup, secure data destruction, and instant recycling certificates.</p>
+                <div class="hero-btns">
+                    <a href="#how_it_works" class="btn btn-primary">Schedule a Pickup</a>
+                    <a href="#items" class="btn btn-outline">Know What We Recycle</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Placeholder: A vector illustration of recycling or a clean city -->
+                <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="E-Waste Collection Pune">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="section-padding about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About GreenCycle</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'" alt="GreenCycle Team" style="border-radius: var(--radius);">
+                </div>
+                <div class="about-text">
+                    <span class="stat-badge"><i class="fas fa-map-marker-alt"></i> Proudly Serving Pune & PCMC</span>
+                    <h3>Mission: Zero Landfill</h3>
+                    <p style="margin-top: 16px;">India generates over <strong>3.2 million tonnes</strong> of e-waste annually. At GreenCycle, our mission is to ensure none of that ends up poisoning our soil or water.</p>
+                    <p>We are a CPCB-authorized recycler committed to ethical disposal. We value transparency, environmental safety, and convenience for our users.</p>
+                    <ul style="margin-top: 20px;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary);"></i> Govt. Authorized & ISO Certified</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary);"></i> 100% Transparent Process</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section-padding services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <div class="divider"></div>
+                <p>Comprehensive e-waste management solutions for homes and businesses.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-truck-loading"></i></div>
+                    <h3>Home Pickup</h3>
+                    <p>Convenient doorstep collection. Schedule a slot via our app, and our verified agents will handle the rest.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-building"></i></div>
+                    <h3>Corporate Collection</h3>
+                    <p>Bulk disposal solutions for IT parks and offices in Pune. Includes Form-6 compliance documentation.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Data Destruction</h3>
+                    <p>Your privacy matters. We offer on-site degaussing and physical destruction of hard drives.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-recycle"></i></div>
+                    <h3>Refurbishing</h3>
+                    <p>Extending the life of usable electronics. We refurbish gadgets to donate to underprivileged schools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accepted Items -->
+    <section id="items" class="section-padding items">
+        <div class="container">
+            <div class="section-header">
+                <h2>What We Collect</h2>
+                <div class="divider"></div>
+                <p>From small chips to large appliances, we recycle it all.</p>
+            </div>
+            <div class="items-grid">
+                <div class="item-card"><i class="fas fa-mobile-alt"></i><span>Mobiles</span></div>
+                <div class="item-card"><i class="fas fa-laptop"></i><span>Laptops</span></div>
+                <div class="item-card"><i class="fas fa-desktop"></i><span>Monitors</span></div>
+                <div class="item-card"><i class="fas fa-print"></i><span>Printers</span></div>
+                <div class="item-card"><i class="fas fa-tv"></i><span>Televisions</span></div>
+			
+                <div class="item-card"><i class="fas fa-charging-station"></i><span>Batteries</span></div>
+                <div class="item-card"><i class="fas fa-fan"></i><span>ACs</span></div>
+                <div class="item-card"><i class="fas fa-blender"></i><span>Appliances</span></div>
+                <div class="item-card"><i class="fas fa-server"></i><span>Servers</span></div>
+                <div class="item-card"><i class="fas fa-plug"></i><span>Cables</span></div>
+			
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section-padding how-it-works" id="how_it_works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <div class="divider" style="background: var(--white);"></div>
+                <p>Recycling your old electronics is as easy as 1-2-3-4.</p>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h3>Create Account</h3>
+                    <p>Register on our portal to manage your requests.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h3>Schedule</h3>
+                    <p>Select a pickup date and time that suits you.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h3>Collection</h3>
+                    <p>Our agent weighs and collects the items from your door.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <h3>Track & Certify</h3>
+                    <p>Track status online and download your Recycling Certificate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section-padding why-choose">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose GreenCycle?</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-leaf"></i>
+                    <div>
+                        <h4>Eco-Friendly Processing</h4>
+                        <p>We use state-of-the-art technology to extract metals without harming the environment.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-file-contract"></i>
+                    <div>
+                        <h4>100% Compliance</h4>
+                        <p>We adhere strictly to E-Waste Management Rules, 2016.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <div>
+                        <h4>Fair Value</h4>
+                        <p>Get competitive rates for high-value scrap items like laptops and ACs.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-user-shield"></i>
+                    <div>
+                        <h4>Data Safety</h4>
+                        <p>We guarantee the destruction of your personal data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact">
+        <div class="container">
+            <div class="impact-grid">
+                <div class="metric">
+                    <h2>50k+</h2>
+                    <p>Kg E-Waste Recycled</p>
+                </div>
+                <div class="metric">
+                    <h2>2,500+</h2>
+                    <p>Registered Users</p>
+                </div>
+                <div class="metric">
+                    <h2>10k</h2>
+                    <p>Kg CO₂ Reduced</p>
+                </div>
+                <div class="metric">
+                    <h2>150+</h2>
+                    <p>Corporate Partners</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Auth CTA Section -->
+    <section class="auth-cta">
+        <div class="container">
+            <div class="auth-box">
+                <h2>Join the Green Revolution</h2>
+                <p>Track your environmental impact, manage pickups, and get paid for your e-waste. It all starts with a single click.</p>
+                <div class="auth-box-btns">
+                    <a href="registration.php" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">Register Now</a>
+                    <a href="login.php" class="btn btn-outline" style="padding: 15px 40px; font-size: 1.1rem;">Login to Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3><i class="fas fa-recycle"></i> GreenCycle</h3>
+                    <p>Your trusted partner for responsible e-waste disposal in Pune. Let's build a cleaner India together.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#items">Pricing List</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">E-Waste Rules</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Hinjewadi Phase 1, Pune - 411057</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope"></i> support@greencycle.in</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GreenCycle E-Waste Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        const mobileAuth = document.querySelector('.mobile-auth');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Toggle display of mobile auth buttons inside the menu
+            if(navMenu.classList.contains('active')) {
+                mobileAuth.style.display = 'flex';
+            } else {
+                mobileAuth.style.display = 'none';
+            }
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            mobileAuth.style.display = 'none';
+        }));
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 50) {
+                header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
+            } else {
+                header.style.boxShadow = "0 1px 3px rgba(0,0,0,0.05)";
+            }
+        });
+    </script>
+</body>
+</html>

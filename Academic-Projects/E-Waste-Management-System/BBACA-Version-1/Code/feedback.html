@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>feedback</title>
+<style type="text/css">
+body
+{
+	margin: 0px;
+	overflow-x: hidden;
+	background-color: #8aff92;
+}
+.top
+{
+	width: 1536px;
+	height: 90px;
+	background-color: #8aff92;
+}
+.top img
+{
+	width: 65px;
+	height: 65px;
+	border-radius: 20%;
+	margin: 15px 40px;
+}
+.top h1
+{
+	font: 39px Candara;
+	color: black;
+	position: absolute;
+	top: -1.2%;
+	left: 7.5%;
+}
+.top p
+{
+	font: 18px Calibri;
+	position: relative;bottom: 60px;left: 118px;
+}
+.top ul
+{
+	position: absolute;
+	top: 3%;
+	left: 75%;
+}
+.top ul li
+{
+	display: inline-block;
+	list-style: none;
+}
+.top ul li a
+{
+	color: black;
+	text-decoration: none;
+	border: 0px solid black;
+	font: 17.5px Calibri;
+	padding: 5px 18px;
+}
+.top ul li a:hover
+{
+	color: black;
+	border-bottom: 3px solid black;
+}
+form
+{
+	position: relative;top: 10px;
+	width: 400px;
+	height: 510px;
+	padding: 20px;
+	background-color: #fbfdfe;
+	box-shadow: 0px 0px 5px 2px #0173cb;
+}
+form input
+{
+	border: none;
+	border-bottom: 1.5px solid black;
+	width: 300px;
+	background-color: #fbfdfe;
+	font: 25px Calibri;
+	margin-top: 50px;
+	position: relative;bottom: 70px;
+}
+textarea
+{
+	width: 300px;
+	height: 90px;
+	background-color: #fbfdfe;
+	font: 22px Calibri;
+	border: 1.5px solid black;
+	position: relative;bottom: 20px;
+}
+form input[type=submit],form input[type=reset]
+{
+	width: 150px;
+	height: 40px;
+	font: 24px Candara;
+	border: none;
+	position: relative;bottom: 40px;right: 4px;
+	background-color: #0173cb;
+	cursor: pointer;
+	margin-left: 10px;	
+}
+form p
+{
+	font: 29px Calibri;
+	position: relative;bottom: 30px;
+	color: #0173cb;
+}
+#footer
+{
+	width: 1536px;
+	height: 50px;
+	background-color: #2b2b2b;
+	position: absolute;top: 93.4%;
+}
+#footer h1
+{
+	font: 23px Candara;
+	color: #0eb4fb;
+	position: absolute;top: -10%;left: 72%;
+}
+</style>
+</head>
+<body>
+<div class="top">
+	<img src="logo.jpeg"><h1>GreenDream</h1><p><i>managed by </i><b>SHREE RECYCLERS</b></p>
+				<ul>
+					<li><a href="homepage.html">HOME</li></a>
+					<li><a href="feedback.html">CONTACT US</li></a>
+					<li><a href="homepage.html" onclick="logout()">LOG OUT</li></a></font>
+				</ul>
+</div>
+			<center><form action="feedback.php" method="POST">
+				<p><b>Write us your feedback !!</b></p>
+				<input type="text" name="name" placeholder="Full Name" required><br>
+				<input type="email" name="email" placeholder="E-mail Address" required><br>
+				<input type="text" name="phNo" placeholder="Contact no." pattern="[0-9]{10}" required><br>
+				<textarea name="comment" placeholder="Write a feedback...." required></textarea><br>
+				<input type="submit" value="Submit" name="submit"><input type="reset" value="Clear">
+			</form></center>
+
+		<div id="footer">
+			<h1><i><b>E-WASTE MANAGEMENT SYSTEM</i></b></h1>
+		</div>
+</body>
+</html>

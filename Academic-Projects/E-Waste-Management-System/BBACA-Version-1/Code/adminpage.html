@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin page</title>
+<style type="text/css">
+body
+{
+	margin: 0px;
+	overflow-x: hidden;
+}
+.top
+{
+	width: 1536px;
+	height: 90px;
+	background-color: white;
+}
+.top img
+{
+	width: 65px;
+	height: 65px;
+	border-radius: 20%;
+	margin: 15px 40px;
+}
+.top h1
+{
+	font: 39px Candara;
+	color: black;
+	position: absolute;
+	top: -1.2%;
+	left: 7.5%;
+}
+.top p
+{
+	font: 18px Calibri;
+	position: relative;top: -60px;left: 118px;
+}
+.top ul
+{
+	position: absolute;
+	top: 3%;
+	left: 79%;
+}
+.top ul li
+{
+	display: inline-block;
+	list-style: none;
+}
+.top ul li a
+{
+	color: black;
+	text-decoration: none;
+	border: 0px solid black;
+	font: 17.5px Calibri;
+	padding: 5px 18px;
+}
+.top ul li a:hover
+{
+	color: black;
+	border-bottom: 3px solid #1cc606;
+}
+.top h3.logout
+{
+	font: 18px Calibri;
+	color: black;
+	background-color: #fb0442;
+	position: absolute;
+	top: 2.3%;
+	left: 88%;
+	padding: 5px 18px; 
+	cursor: pointer;
+}
+div#line
+{
+	width: 1536px;
+	height: 1px;
+	background-color: #1cc606;
+	position: absolute;
+	top: 13%;
+}
+#main
+{
+	width: 1300px;
+	height: 600px;
+	position: absolute;top: 17%;left: 7.5%;
+}
+.box1,.box2,.box3,.box4,.box5,.box6
+{
+	width: 370px;
+	height: 220px;
+	border: 0px solid black;
+	box-shadow: 0px 0px 10px 3px black;
+	transition: 0.4s ease;
+}
+.box1
+{
+	position: absolute;top: 7%;left: 2%;
+}
+.box2
+{
+	position: absolute;top: 7%;left: 36%;
+}
+.box3
+{
+	position: absolute;top: 7%;left: 70%;
+}
+.box4
+{
+	position: absolute;top: 59%;left: 17%;
+}
+.box5
+{
+	position: absolute;top: 59%;left: 55%;
+}
+h2
+{
+	font: 38px Candara;
+	margin-top: 90px;
+	color: #00a398;
+}
+#img
+{
+	width: 100px;
+	height: 100px;
+	position: absolute;top: -20%;left: 37%;
+}
+.box1:hover,.box2:hover,.box3:hover,.box4:hover,.box5:hover,.box6:hover
+{
+	transform: scale3d(1.1,1.1,1.1);
+}
+</style>
+</head>
+<body>
+<div class="top"><img src="logo.jpeg"><h1>GreenDream</h1><p><i>managed by </i><b>SHREE RECYCLERS</b></p>
+	<ul>
+		<li><a href="homepage.html">HOME</li></a>
+	</ul>
+			<a href="logout1.php"><h3 class="logout">LOG OUT</h3></a>
+</div>
+			<div id="line"></div>
+
+				<div id="main">
+					<a href="customer_fetch.php"><div class="box1">
+						<h2><center>Customer Details</center></h2>
+						<img src="member.png" id="img">
+					</div></a>
+					<a href="product.html"><div class="box2">
+						<h2><center>Product Details</center></h2>
+						<img src="product.png" id="img">
+					</div></a>
+					<a href="sale_fetch.php"><div class="box3">
+						<h2><center>Sale Requests</center></h2>
+						<img src="sales.jpg" id="img">
+					</div></a>
+					<a href="feeedback_fetch.php"><div class="box4">
+						<h2><center>Feedback Details</center></h2>
+						<img src="feedback.png" id="img">
+					</div></a>
+					<a href="report.html"><div class="box5">
+						<h2><center>Reports</center></h2>
+						<img src="report.jpg" id="img">
+					</div></a>
+			</div>
+</body>
+</html>

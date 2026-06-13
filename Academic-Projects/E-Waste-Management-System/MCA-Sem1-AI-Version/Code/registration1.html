@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | GreenCycle E-Waste Solutions</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- Shared Variables --- */
+        :root {
+            --primary: #059669;
+            --primary-dark: #047857;
+            --secondary: #1f2937;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --bg-light: #f3f4f6;
+            --radius: 8px;
+            --error: #ef4444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--white);
+            height: 100vh;
+            overflow: hidden; /* Prevent body scroll, handle in containers */
+        }
+
+        .register-container {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            height: 100vh;
+            width: 100%;
+        }
+
+        /* --- Left Side: Visual --- */
+        .visual-side {
+            background: linear-gradient(rgba(5, 150, 105, 0.9), rgba(4, 120, 87, 0.9)), 
+                        url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 60px;
+            color: var(--white);
+        }
+
+        .visual-content h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .visual-content ul {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .visual-content li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .visual-content li i {
+            background: rgba(255,255,255,0.2);
+            padding: 8px;
+            border-radius: 50%;
+            font-size: 0.9rem;
+        }
+
+        /* --- Right Side: Scrollable Form --- */
+        .form-side {
+            background-color: var(--white);
+            overflow-y: auto; /* Enable scrolling for form */
+            padding: 60px 80px;
+            position: relative;
+        }
+
+        .back-home {
+            position: absolute;
+            top: 30px;
+            left: 40px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            z-index: 10;
+        }
+        .back-home:hover { color: var(--primary); }
+
+        .form-header {
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+        .form-header h2 { font-size: 2rem; color: var(--secondary); margin-bottom: 8px; }
+        .form-header p { color: var(--text-light); }
+
+        /* --- Form Grid Layout --- */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .full-width { grid-column: span 2; }
+
+        .form-group { margin-bottom: 5px; } /* Spacing handled by grid gap mostly */
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--secondary);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .input-wrapper { position: relative; }
+        .input-wrapper i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9ca3af;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px 16px 12px 45px;
+            border: 1px solid #e5e7eb;
+            border-radius: var(--radius);
+            font-size: 0.95rem;
+            transition: 0.3s;
+            color: var(--secondary);
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Adjust padding for select/textarea if no icon */
+        .form-group select.no-icon, .form-group textarea.no-icon {
+            padding-left: 16px; 
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.1);
+        }
+
+        .terms-check {
+            margin-top: 10px;
+            display: flex;
+            align-items: start;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        .terms-check input { margin-top: 4px; accent-color: var(--primary); }
+        .terms-check a { color: var(--primary); font-weight: 600; }
+
+        .btn-register {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 25px;
+        }
+        .btn-register:hover { background-color: var(--primary-dark); transform: translateY(-2px); }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+        .login-link a { color: var(--primary); font-weight: 600; }
+
+        /* --- Validation Styles --- */
+        input:invalid:not(:placeholder-shown) {
+            border-color: var(--error);
+        }
+        .error-message {
+            color: var(--error);
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 900px) {
+            .register-container { grid-template-columns: 1fr; overflow-y: auto; display: block; }
+            .visual-side { display: none; }
+            .form-side { padding: 40px 24px; overflow-y: visible; }
+            .back-home { top: 20px; left: 24px; }
+        }
+
+        @media (max-width: 600px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .full-width { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-container">
+        <!-- Left Side (Visual Info) -->
+        <div class="visual-side">
+            <div class="logo">
+                <i class="fas fa-recycle" style="font-size: 2rem;"></i>
+            </div>
+            <div class="visual-content">
+                <h1>Join GreenCycle Today</h1>
+                <p>Create an account to start your journey towards a cleaner environment.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Schedule doorstep pickups easily</li>
+                    <li><i class="fas fa-check"></i> Track real-time status of your requests</li>
+                    <li><i class="fas fa-check"></i> Earn Green Points for every kg recycled</li>
+                    <li><i class="fas fa-check"></i> Get instant recycling certificates</li>
+                </ul>
+            </div>
+            <div class="visual-footer">
+                &copy; 2025 GreenCycle E-Waste Solutions.
+            </div>
+        </div>
+
+        <!-- Right Side (Registration Form) -->
+        <div class="form-side">
+            <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Home</a>
+
+            <div class="form-header">
+                <h2>Create Account</h2>
+                <p>Fill in your details to register as a new user.</p>
+            </div>
+
+            <form action="login.html" onsubmit="return validateForm()">
+                <div class="form-grid">
+                    
+                    <!-- Full Name -->
+                    <div class="form-group full-width">
+                        <label for="fullname">Full Name</label>
+                        <div class="input-wrapper">
+                            <i class="far fa-user"></i>
+                            <input type="text" id="fullname" placeholder="John Doe" required>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-wrapper">
+                            <i class="far fa-envelope"></i>
+                            <input type="email" id="email" placeholder="name@example.com" required>
+                        </div>
+                    </div>
+
+                    <!-- Mobile -->
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-mobile-alt"></i>
+                            <input type="tel" id="mobile" placeholder="9876543210" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" required>
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" placeholder="Min 8 chars" minlength="8" required>
+                        </div>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirm-password" placeholder="Re-enter password" required>
+                        </div>
+                        <span id="pass-error" class="error-message">Passwords do not match</span>
+                    </div>
+
+                    <!-- Address Heading -->
+                    <div class="full-width" style="margin-top: 10px; margin-bottom: 5px;">
+                        <h4 style="color: var(--secondary); border-bottom: 1px solid #e5e7eb; padding-bottom: 5px;">Pickup Address</h4>
+                    </div>
+
+                    <!-- Full Address -->
+                    <div class="form-group full-width">
+                        <label for="address">Full Address (House No, Street, Area)</label>
+                        <textarea id="address" class="no-icon" rows="2" placeholder="e.g. Flat 101, Green Society, Hinjewadi" required></textarea>
+                    </div>
+
+                    <!-- City -->
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" id="city" value="Pune" required>
+                        </div>
+                    </div>
+
+                    <!-- State -->
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <select id="state" class="no-icon" required>
+                            <option value="Maharashtra" selected>Maharashtra</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <!-- Add other states as needed -->
+                        </select>
+                    </div>
+
+                    <!-- PIN Code -->
+                    <div class="form-group">
+                        <label for="pincode">PIN Code</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-map-pin"></i>
+                            <input type="text" id="pincode" placeholder="411057" pattern="[0-9]{6}" title="Please enter a valid 6-digit PIN code" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Alternate Phone (Optional) -->
+                    <div class="form-group">
+                        <label for="alt-phone">Alternate Phone (Optional)</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="alt-phone" placeholder="Landline or other mobile">
+                        </div>
+                    </div>
+
+                    <!-- Terms -->
+                    <div class="form-group full-width terms-check">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms" style="display:inline; margin:0; font-weight:400;">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a> of GreenCycle.</label>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn-register">Register Now</button>
+            </form>
+
+            <div class="login-link">
+                Already have an account? <a href="login.html">Login here</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+            const errorSpan = document.getElementById("pass-error");
+
+            if (password !== confirmPassword) {
+                errorSpan.style.display = "block";
+                document.getElementById("confirm-password").style.borderColor = "var(--error)";
+                return false; // Prevent submission
+            } else {
+                errorSpan.style.display = "none";
+                document.getElementById("confirm-password").style.borderColor = "#e5e7eb";
+                // In a real app, you would submit data to backend here
+                alert("Registration Successful! Redirecting to Login...");
+                return true; 
+            }
+        }
+    </script>
+</body>
+</html>

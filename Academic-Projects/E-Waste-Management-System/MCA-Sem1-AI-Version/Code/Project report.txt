@@ -1,0 +1,393 @@
+A Project Report On
+
+GreenCycle E-Waste Solutions
+
+Submitted by
+[Your Full Name Here]
+
+Roll No.: [Your Roll No]
+MCA–I
+SEM–I
+
+Under the guidance of
+[Your Project Guide Name]
+
+For the Academic Year 2025-26
+
+Sinhgad Technical Education Society’s
+
+Sinhgad Institute of Management
+
+Vadgaon Bk Pune 411041
+(Affiliated to SPPU Pune & Approved by AICTE New Delhi)
+
+CERTIFICATE
+
+This is to certify that Mr/Ms. [Your Full Name Here] has successfully completed his/her project work entitled “GreenCycle E-Waste Solutions” in partial fulfillment of MCA – I SEM –I Mini Project for the year 2025-2026. He/She has worked under our guidance and direction.
+
+[Your Project Guide Name] Project Guide
+
+Dr. Chandrani Singh Director, SIOM-MCA
+
+Date: [Date]
+
+Place: Pune
+
+DECLARATION
+
+I certify that the work contained in this report is original and has been done by me under the guidance of my guide.
+The work has not been submitted to any other Institute for any degree or diploma.
+I have followed the guidelines provided by the Institute in preparing the report.
+I have conformed to the norms and guidelines given in the Ethical Code of Conduct of the Institute.
+Whenever I have used materials (data, theoretical analysis, figures, and text) from other sources, I have given due credit to them by citing them in the text of the report and giving their details in the references.
+
+Name and Signature of Project Team Members:
+
+Sr. No.
+
+Roll No.
+
+Name of students
+
+Signature of students
+
+1
+
+[Roll No]
+
+[Your Full Name Here]
+
+
+
+ACKNOWLEDGEMENT
+
+It is a very difficult task to acknowledge all those who have been of tremendous help in this project. I would like to thank my respected guide [Your Project Guide Name] for providing me necessary facilities to complete my project and for their guidance and encouragement in completing my project successfully without which it wouldn’t be possible. I wish to convey my special thanks and immeasurable feelings of gratitude towards Dr. Chandrani Singh, Director, SIOM-MCA. I wish to convey my special thanks to all teaching and non-teaching staff members of Sinhgad Institute of Management, Pune for their support.
+
+Thank You
+
+Yours Sincerely, [Your Full Name Here]
+
+INDEX
+
+Sr. No.
+
+Chapter
+
+1
+
+CHAPTER 1: INTRODUCTION
+
+1.1
+
+Abstract
+
+1.2
+
+Existing System and Need for System
+
+1.3
+
+Scope of System
+
+1.4
+
+Operating Environment Hardware and Software
+
+1.5
+
+Brief Description of Technology Used
+
+2
+
+CHAPTER 2: PROPOSED SYSTEM
+
+2.1
+
+Feasibility Study
+
+2.2
+
+Objectives of the proposed system
+
+2.3
+
+Users of the system
+
+3
+
+CHAPTER 3: ANALYSIS AND DESIGN
+
+3.1
+
+Entity Relationship Diagram (ERD)
+
+3.2
+
+Use Case Diagrams
+
+3.3
+
+Table Design
+
+4
+
+CHAPTER 4: CODING (Sample Code)
+
+5
+
+CHAPTER 5: LIMITATIONS OF SYSTEM
+
+6
+
+CHAPTER 6: PROPOSED ENHANCEMENTS
+
+7
+
+CHAPTER 7: CONCLUSION
+
+8
+
+CHAPTER 8: BIBLIOGRAPHY
+
+CHAPTER 1: INTRODUCTION
+
+1.1 Abstract
+
+GreenCycle E-Waste Solutions is a web-based application designed to streamline the collection and recycling of electronic waste. In the current digital age, e-waste is accumulating at an alarming rate. This project provides a platform where users can schedule doorstep pickups for their old electronics, collectors can manage their pickup routes efficiently, and administrators can oversee the entire process with analytics. A key feature of this system is the integration of an AI-based E-Waste Scanner using TensorFlow.js, which allows users to identify waste items via image recognition instantly.
+
+1.2 Existing System and Need for System
+
+Existing System: Currently, e-waste disposal is largely unorganized. Citizens often sell scrap to informal vendors (kabadiwalas) who may not recycle items safely, leading to environmental hazards. There is no centralized tracking of how much waste is generated or recycled.
+Need for System:
+
+To provide a certified, eco-friendly disposal channel.
+
+To offer convenience through doorstep pickup scheduling.
+
+To track the lifecycle of e-waste from generation to recycling.
+
+To ensure data security via certified destruction of storage devices.
+
+1.3 Scope of System
+
+The system covers three main modules:
+
+User Module: Registration, Profile Management, AI Image Scanning, Pickup Scheduling, Feedback.
+
+Collector Module: Task Assignment (Auto/Manual), Route Management, Status Updates (In-Transit/Completed).
+
+Admin Module: Dashboard Analytics, User/Collector Management, Reporting (CSV Export), Request Approval.
+
+1.4 Operating Environment Hardware and Software
+
+Server-side requirement
+
+Software Requirement
+
+Hardware Requirement
+
+Operating System: Windows 10/11 or Linux
+
+Processor: Intel Core i5 or above
+
+Front End: HTML5, CSS3 (Tailwind), JavaScript
+
+RAM: 8GB or above
+
+Back End: PHP 8.0+
+
+HDD: 512 GB SSD or above
+
+Database: MySQL (via XAMPP/WAMP)
+
+
+
+AI Model: TensorFlow.js (MobileNet)
+
+
+
+Client-side requirement
+
+Software Requirement
+
+Hardware Requirement
+
+Operating System: Windows, Android, iOS
+
+Processor: Intel Core i3 / Snapdragon 600+
+
+Web Browser: Chrome, Edge, Firefox, Safari
+
+RAM: 4GB or above
+
+
+
+Camera: Required for AI Scanner
+
+1.5 Brief Description of Technology Used
+
+PHP: Used for server-side logic, session management, and database interaction.
+
+MySQL: Relational database management system used to store user data, requests, and feedback.
+
+Tailwind CSS: A utility-first CSS framework used for designing a responsive and modern UI.
+
+JavaScript: Used for client-side validation and dynamic DOM manipulation.
+
+TensorFlow.js: An open-source hardware-accelerated JavaScript library used for training and deploying machine learning models in the browser. We utilize the MobileNet pre-trained model for image classification.
+
+Chart.js: A JavaScript library used to render interactive graphs and analytics on the Admin Dashboard.
+
+CHAPTER 2: PROPOSED SYSTEM
+
+2.1 Feasibility Study
+
+Technical Feasibility: The project uses standard web technologies (PHP/MySQL) which are open source and widely supported. The AI component runs client-side, reducing server load.
+
+Operational Feasibility: The UI is designed to be simple and intuitive, requiring minimal training for users and collectors.
+
+Economic Feasibility: Being a web-based solution, deployment costs are low. It eliminates the need for expensive physical infrastructure for initial collection booking.
+
+2.2 Objectives of the proposed system
+
+To automate the scheduling of e-waste pickups.
+
+To provide real-time tracking of request status (Pending -> Accepted -> Completed).
+
+To categorize e-waste accurately using AI.
+
+To generate reports for environmental impact analysis.
+
+2.3 Users of the system
+
+Administrator: Superuser with full control over the system.
+
+Collector: Field agent responsible for physical collection and status updates.
+
+User (Household/Corporate): The entity generating e-waste and raising requests.
+
+CHAPTER 3: ANALYSIS AND DESIGN
+
+3.1 Entity Relationship Diagram (ERD)
+
+Users (1) ---- (M) Pickup_Requests
+
+Users (1) ---- (M) Feedback
+
+Users (Collector) (1) ---- (M) Pickup_Requests (Assigned)
+
+3.8 Table Design
+
+Table: users
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| id | INT (PK) | Unique User ID |
+| fullname | VARCHAR | Name of the user |
+| email | VARCHAR | Unique Email Address |
+| password | VARCHAR | Hashed Password |
+| mobile | VARCHAR | Contact Number |
+| address | TEXT | Physical Address |
+| pincode | VARCHAR | Zip Code for matching |
+| role | ENUM | 'User', 'admin', 'collector' |
+| status | ENUM | 'Active', 'Suspended' |
+
+Table: pickup_requests
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| id | INT (PK) | Unique Request ID |
+| user_id | INT (FK) | Link to User |
+| collector_id | INT (FK) | Link to Assigned Collector |
+| scheduled_date| DATE | Requested Date |
+| items | TEXT | Description of waste |
+| status | ENUM | 'Pending', 'Accepted', 'In-Transit', 'Completed', 'Rejected' |
+| created_at | TIMESTAMP | Time of creation |
+
+Table: feedback
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| id | INT (PK) | Unique ID |
+| user_id | INT (FK) | Link to User |
+| rating | INT | 1-5 Star Rating |
+| comments | TEXT | Feedback text |
+
+CHAPTER 4: CODING (Sample Code)
+
+Login Logic (login.php Snippet)
+
+session_start();
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $email = trim($_POST["email"]);
+    $password = trim($_POST["password"]);
+    
+    $sql = "SELECT id, fullname, password, role FROM users WHERE email = ?";
+    if($stmt = mysqli_prepare($conn, $sql)){
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        if(mysqli_stmt_execute($stmt)){
+            mysqli_stmt_store_result($stmt);
+            if(mysqli_stmt_num_rows($stmt) == 1){
+                mysqli_stmt_bind_result($stmt, $id, $fullname, $hashed_password, $role);
+                if(mysqli_stmt_fetch($stmt)){
+                    if(password_verify($password, $hashed_password)){
+                        $_SESSION["loggedin"] = true;
+                        $_SESSION["id"] = $id;
+                        $_SESSION["role"] = $role;
+                        // Redirect based on role...
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+AI Scanner Logic (JavaScript Snippet)
+
+let net;
+async function loadModel() {
+    console.log("Loading MobileNet...");
+    net = await mobilenet.load();
+}
+
+async function identifyImage() {
+    const imgEl = document.getElementById('uploaded-img');
+    const result = await net.classify(imgEl);
+    
+    if(result.length > 0) {
+        document.getElementById('result').innerText = result[0].className;
+        document.getElementById('confidence').innerText = result[0].probability;
+    }
+}
+
+
+
+
+
+CHAPTER 5: LIMITATIONS OF SYSTEM
+Internet Dependency: The system requires an active internet connection to load the AI models and submit requests.
+
+Lighting Conditions: The AI scanner's accuracy depends on the quality and lighting of the uploaded image.
+
+Physical Verification: The system relies on the user's input for item weight/quantity; actual verification happens only upon collection.
+
+CHAPTER 6: PROPOSED ENHANCEMENTS
+Real-time GPS Tracking: Integrate Google Maps API to allow users to track the collector's vehicle in real-time.
+
+Reward Points System: Implement a gamification module where users earn "Green Points" for recycling, redeemable for coupons.
+
+Mobile Application: Develop a dedicated Android/iOS app for offline support and push notifications.
+
+Chatbot Integration: Add an AI chatbot to answer FAQs about recyclable materials.
+
+CHAPTER 7: CONCLUSION
+The GreenCycle E-Waste Solutions project successfully addresses the problem of unorganized e-waste disposal. By leveraging modern web technologies and AI, we have created a user-friendly platform that connects households with authorized recyclers. The system brings transparency, efficiency, and accountability to the waste management process, contributing significantly to a cleaner and greener environment.
+
+CHAPTER 8: BIBLIOGRAPHY
+PHP Documentation: https://www.php.net/docs.php
+
+MySQL Reference Manual: https://dev.mysql.com/doc/
+
+TensorFlow.js Models: https://www.tensorflow.org/js/models
+
+Tailwind CSS Documentation: https://tailwindcss.com/docs
+
+Chart.js Documentation: https://www.chartjs.org/docs/latest/
